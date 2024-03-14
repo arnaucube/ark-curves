@@ -1,6 +1,6 @@
 [package]
 name = "ark-bn254"
-version = "0.4.0-alpha.2"
+version = "0.4.0"
 authors = [ "arkworks contributors" ]
 description = "The BN254 pairing-friendly elliptic curve"
 homepage = "https://arkworks.rs"
@@ -16,6 +16,7 @@ edition = "2021"
 ark-ff = { version="0.4.0-alpha", default-features = false }
 ark-ec = { version="0.4.0-alpha", default-features = false }
 ark-std = { version = "0.4.0-alpha", default-features = false }
+ark-r1cs-std = { version = "0.4.0-alpha", default-features = false, optional = true }
 
 [dev-dependencies]
 ark-serialize = { version = "0.4.0-alpha", default-features = false }
@@ -25,6 +26,7 @@ ark-algebra-bench-templates = { version = "0.4.0-alpha", default-features = fals
 [features]
 default = [ "curve" ]
 std = [ "ark-std/std", "ark-ff/std", "ark-ec/std" ]
+r1cs = [ "ark-r1cs-std" ]
 
 curve = [ "scalar_field" ]
 scalar_field = []
